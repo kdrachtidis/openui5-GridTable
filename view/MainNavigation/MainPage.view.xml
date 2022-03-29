@@ -5,60 +5,63 @@
   xmlns:core="sap.ui.core"
   xmlns:m="sap.m"
   displayBlock="true">
-  <m:Page class="sapUiContentPadding"
+  <m:Page class="sapUiContentPadding" 
+		enableScrolling="false"
     title="Home">
     <m:content>
 
-     <ui:Table id="idProductsTable"
+      <ui:Table id="idProductsTable"
         rows="{path:'/results', templateShareable: true}"
         alternateRowColors="true"
         visibleRowCount="15"
         showColumnVisibilityMenu="true"
         selectionBehavior="RowSelector"
-        rowActionCount="1">
+        rowActionCount="1"
+        enableColumnFreeze="true"
+        fixedColumnCount="2">
 
         <ui:extension>
           <!--<mvc:XMLView viewName="DWC.view.Applications.Tables.Toolbars.StoryBuilder" />-->
         </ui:extension>
 
         <ui:columns>
-          <ui:Column>
+          <ui:Column width="11rem">
             <m:Label text="Business Name" />
             <ui:template>
               <m:Text text="{BusinessName}" />
             </ui:template>
           </ui:Column>
-          <ui:Column>
+          <ui:Column width="11rem">
             <m:Label text="Technical Name" />
             <ui:template>
               <m:Text text="{TechnicalName}" />
             </ui:template>
           </ui:Column>
-          <ui:Column >
+          <ui:Column width="11rem">
             <m:Label text="Type" />
             <ui:template>
               <m:Text text="{Type}" />
             </ui:template>
           </ui:Column>
-          <ui:Column >
+          <ui:Column width="11rem">
             <m:Label text="Status" />
             <ui:template>
               <m:Text text="{Status}" />
             </ui:template>
           </ui:Column>
-          <ui:Column >
+          <ui:Column width="11rem">
             <m:Label text="Deployed on" />
             <ui:template>
               <m:Text text="{DeployedOn}" />
             </ui:template>
           </ui:Column>
-          <ui:Column >
+          <ui:Column width="11rem">
             <m:Label text="Changed by" />
             <ui:template>
               <m:Text text="{ChangedBy} " />
             </ui:template>
           </ui:Column>
-          <ui:Column >
+          <ui:Column width="11rem">
             <m:Label text="Changed on" />
             <ui:template>
               <m:Text text="{ChangedOn}" />
@@ -66,7 +69,7 @@
           </ui:Column>
         </ui:columns>
         <ui:rowActionTemplate>
-          
+
         </ui:rowActionTemplate>
         <ui:footer>
           <m:ObjectAttribute title="Last activity"
