@@ -1,12 +1,79 @@
 <mvc:View controllerName="DemoUXapp.controller.MainNavigation.MainPage"
   height="100%"
   xmlns:mvc="sap.ui.core.mvc"
+  xmlns:ui="sap.ui.table"
   xmlns:core="sap.ui.core"
-  xmlns="sap.m">
-  <Page class="sapUiContentPadding"
+  xmlns:m="sap.m"
+  displayBlock="true">
+  <m:Page class="sapUiContentPadding"
     title="Home">
-    <content>
-      <!-- Place content here-->
-    </content>
-  </Page>
+    <m:content>
+
+     <ui:Table id="idProductsTable"
+        rows="{path:'/results', templateShareable: true}"
+        alternateRowColors="true"
+        visibleRowCount="15"
+        showColumnVisibilityMenu="true"
+        selectionBehavior="RowSelector"
+        rowActionCount="1">
+
+        <ui:extension>
+          <!--<mvc:XMLView viewName="DWC.view.Applications.Tables.Toolbars.StoryBuilder" />-->
+        </ui:extension>
+
+        <ui:columns>
+          <ui:Column>
+            <m:Label text="Business Name" />
+            <ui:template>
+              <m:Text text="{BusinessName}" />
+            </ui:template>
+          </ui:Column>
+          <ui:Column>
+            <m:Label text="Technical Name" />
+            <ui:template>
+              <m:Text text="{TechnicalName}" />
+            </ui:template>
+          </ui:Column>
+          <ui:Column >
+            <m:Label text="Type" />
+            <ui:template>
+              <m:Text text="{Type}" />
+            </ui:template>
+          </ui:Column>
+          <ui:Column >
+            <m:Label text="Status" />
+            <ui:template>
+              <m:Text text="{Status}" />
+            </ui:template>
+          </ui:Column>
+          <ui:Column >
+            <m:Label text="Deployed on" />
+            <ui:template>
+              <m:Text text="{DeployedOn}" />
+            </ui:template>
+          </ui:Column>
+          <ui:Column >
+            <m:Label text="Changed by" />
+            <ui:template>
+              <m:Text text="{ChangedBy} " />
+            </ui:template>
+          </ui:Column>
+          <ui:Column >
+            <m:Label text="Changed on" />
+            <ui:template>
+              <m:Text text="{ChangedOn}" />
+            </ui:template>
+          </ui:Column>
+        </ui:columns>
+        <ui:rowActionTemplate>
+          
+        </ui:rowActionTemplate>
+        <ui:footer>
+          <m:ObjectAttribute title="Last activity"
+            text="Object 6893 by Dorsey Hahn" />
+        </ui:footer>
+      </ui:Table>
+
+    </m:content>
+  </m:Page>
 </mvc:View>
